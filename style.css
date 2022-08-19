@@ -56,3 +56,61 @@ body{
 .myBtn button:hover{
      background-color: rgb(30, 164, 164);
 }
+
+/* ruls section */
+
+.RulsBox{
+     width: 320px;
+     height: 580px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     background-color: #f1f1f1;
+     box-shadow: rgba(0 0 0 /10%) 0px 10px 50px;
+     transform: translate(-50%, -50%);
+     border-radius: 45px;
+}
+.RulesList{
+     width: 80%;
+     margin: auto;
+}
+.RulsTital{
+     text-align: center;
+     font-size: 20px;
+     font-weight: 600;
+     border-bottom: 1px solid lightgray;
+     padding: 5px;
+}
+
+ol li{
+     font-size: 17px;
+     font-weight: 500;
+     padding: 10px 25px;
+}
+.buttons button{
+     font-size: 20px;
+     font-weight: 600;
+     background-color: tomato;
+     border: none;
+     outline: none;
+     color: #fff;
+     padding: 6px 25px;
+     cursor: pointer;    
+     transition: 0.2s ease-in-out;
+     margin-top: 25px;
+
+}
+#ExitButton{
+     border-radius: 0px 47px 0px 46px;
+}
+#ExitButton:hover{
+     background-color: red;
+
+}
+#Countinue{
+     border-radius: 57px 0px 46px 0px;
+     margin-left: 65px;
+}
+#Countinue:hover{
+     background-color: rgb(30, 164, 164);
+}
