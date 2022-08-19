@@ -27,11 +27,11 @@ body{
      border-top-left-radius: 35px;
 }
 
-.text{
+.text1{
      width: 90%;
      margin: auto;
 }
-.text h3{
+.text1 h3{
      margin-top: 10px;
 }
 
@@ -58,6 +58,13 @@ body{
 }
 
 /* ruls section */
+.RulsBox.activeInfo{
+     opacity: 1;
+     z-index: 5;
+     pointer-events: auto;
+     transform: translate(-50%, -50%) scale(1);
+}
+
 
 .RulsBox{
      width: 320px;
@@ -69,6 +76,8 @@ body{
      box-shadow: rgba(0 0 0 /10%) 0px 10px 50px;
      transform: translate(-50%, -50%);
      border-radius: 45px;
+     opacity: 0;
+     pointer-events: none;
 }
 .RulesList{
      width: 80%;
@@ -116,9 +125,18 @@ ol li{
 }
 
 /* quiz part */
+.Questions.activeQuiz{
+     opacity: 1;
+     z-index: 5;
+     pointer-events: auto;
+     transform: translate(-50%, -50%) scale(1);
+}
+
+
+
 .Questions{
      width: 320px;
-     height: 580px;
+     height: 590px;
      position: absolute;
      top: 50%;
      left: 50%;
@@ -126,6 +144,8 @@ ol li{
      box-shadow: rgba(0 0 0 /10%) 0px 10px 50px;
      transform: translate(-50%, -50%);
      border-radius: 45px;
+     opacity: 0;
+     pointer-events: none;
 }
 .header{
      position: relative;
@@ -224,10 +244,27 @@ footer button{
      background: tomato;
      cursor: pointer;
      color: all 0.3s ease;
-     margin-bottom: 12px;
-    
+     margin-bottom: 11px;
+      
 }
 .nextBtn:hover{
      background-color:  rgb(30, 164, 164);;
 }
 
+.footerIfo{
+     margin-top:53px;
+}
+
+.Options.correct{
+     color: #155724;
+     background: #d4edda;
+     border: 1px solid #c3e6cb;
+}
+.Options.incorrect{
+     color: #721c24;
+     background: #f8d7da;
+     border: 1px solid #f5c6cb;
+}
+.Options.disabled{
+     pointer-events: none;
+}
