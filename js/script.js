@@ -29,6 +29,10 @@ CountinueBtn.onclick = () =>{
 }
 const nextBtn = document.querySelector('.nextBtn');
 
+const result_Box = document.querySelector('.result_Box');
+const restart_quiz = document.querySelector('.buttons_result .result1');
+const quit_quiz = document.querySelector('.buttons_result .quit');
+
 let que_count = 0;
 let counter;
 let timeValue = 15;
@@ -47,7 +51,8 @@ nextBtn.onclick = () =>{
           nextBtn.style.display = 'none';
      }
      else{
-          console.log('you have complite your task')
+          console.log('you have complite your task');
+          showResultBox()
      }
 }
 
@@ -110,6 +115,21 @@ function optionSelected(answer){
     }
     nextBtn.style.display = 'block';
 }
+
+function showResultBox(){
+     RulsBox.classList.remove('activeInfo');
+     Questions.classList.remove('activeQuiz');
+
+     result_Box.classList.add('activeResult');
+
+
+
+}
+
+
+
+
+
 
 function startTimer(time){
      counter = setInterval(timer, 1000);
