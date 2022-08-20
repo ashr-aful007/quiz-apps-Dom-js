@@ -76,6 +76,11 @@ function optionSelected(answer){
      else{
           answer.classList.add('incorrect');
           console.log('Answer is Wrong');
+          for(let i= 0; i<alloptionsList; i++){
+               if(alloptions.children[i].textContent == correctsAns){
+                    alloptions.children[i].setAttribute('class','Options correct');
+               }
+          }
      }
     for(let i=0; i<alloptionsList; i++){
       alloptions.children[i].classList.add('disabled')
