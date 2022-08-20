@@ -7,6 +7,7 @@ const myBtn = document.querySelector('.myBtn button');
  const CountinueBtn = document.getElementById('Countinue');
  const Questions = document.querySelector('.Questions');
  const TimeCount = document.querySelector('.TimeCount .seconds');
+ const timeLine = document.querySelector('.Questions .TimeLine')
 
 myBtn.onclick = () =>{
      RulsBox.classList.add('activeInfo');
@@ -23,13 +24,16 @@ CountinueBtn.onclick = () =>{
      RulsBox.classList.remove('activeInfo');
      Questions.classList.add('activeQuiz'); 
      showQuestions(0)
-     startTimer(15) 
+     startTimer(15)
+     startTimerLine(0); 
 }
 const nextBtn = document.querySelector('.nextBtn');
 
 let que_count = 0;
 let counter;
 let timeValue = 15;
+let counterLine;
+let widthValue = 0;
 
 nextBtn.onclick = () =>{
      if(que_count < questions.length - 1){
@@ -37,6 +41,10 @@ nextBtn.onclick = () =>{
           showQuestions(que_count);
           clearInterval(counter);
           startTimer(timeValue);
+
+          clearInterval(counterLine);
+          startTimerLine(widthValue);
+          nextBtn.style.display = 'none';
      }
      else{
           console.log('you have complite your task')
@@ -73,6 +81,7 @@ let crossIcon = '<div class="cross icon"><i class="fas fa-times"></i></div>';
 
 function optionSelected(answer){
      clearInterval(counter);
+     clearInterval(counterLine)
      let usrAns = answer.textContent;
      let correctsAns = questions[que_count].answer;
 
@@ -99,6 +108,7 @@ function optionSelected(answer){
     for(let i=0; i<alloptionsList; i++){
       alloptions.children[i].classList.add('disabled')
     }
+    nextBtn.style.display = 'block';
 }
 
 function startTimer(time){
@@ -106,7 +116,24 @@ function startTimer(time){
      function timer(){
           TimeCount.textContent = time;
           time--;
+          if(time <9){
+               let Zero = TimeCount.textContent;
+               TimeCount.textContent = 0 + Zero;
+          }
+          if(time <0){
+               clearInterval(counter)
+               TimeCount.textContent = '00';
+          }
      }
 }
-//  const timen = startTimer(15);
-//  console.log(timen)
+
+function startTimerLine(time){
+     counterLine = setInterval(timer, 50);
+     function timer(){
+          time += 1;
+          timeLine.style.width = time + 'px';
+          if(time > 319){
+               clearInterval(counterLine);
+          }
+     }
+}

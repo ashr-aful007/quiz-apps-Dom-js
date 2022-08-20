@@ -245,6 +245,7 @@ footer button{
      cursor: pointer;
      color: all 0.3s ease;
      margin-bottom: 11px;
+     display: none;
       
 }
 .nextBtn:hover{
@@ -267,4 +268,12 @@ footer button{
 }
 .Options.disabled{
      pointer-events: none;
+}
+
+.Questions header .TimeLine{
+     position: absolute;
+     bottom: 0px;
+     left: 0px;
+     height: 3px;
+     background: #007bff;   
 }
